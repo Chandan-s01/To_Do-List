@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Outfit:wght@100..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <title>To-Do List</title>
+</head>
+<body>
+  <div class="main" id="main">
+    <nav class="heading">
+      <h2 class="title">To-Do-List</h2>
+      <button class="menu" id="menu">Menu</button>
+      <div class="dropdown_menu" id="dropdown">
+        <ul id="taskList">
+          <li><a href="#" onclick="displayTasksByCategory('study')" class="catogory">Study</a></li>
+          <li><a href="#" onclick="displayTasksByCategory('work')" class="catogory">Work</a></li>
+          <li><a href="#" onclick="displayTasksByCategory('personal')" class="catogory">Personal</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id="container">
+      <h3 class="content">Add The Task</h3>
+      <span class="material-symbols-outlined" id="task">add_circle</span>
+    </div>
+
+    <div class="add-task" id="add-task">
+      <div class="choice" id="choice">
+        <label for="study">Study</label>
+        <input type="radio" name="category" id="study" value="study" />
+        <label for="work">Work</label>
+        <input type="radio" name="category" id="work" value="work" />
+        <label for="personal">Personal</label>
+        <input type="radio" name="category" id="personal" value="personal" />
+      </div>
+      <input type="text" id="task_details" placeholder="Enter Today's Task" />
+      <button class="save" id="save" onclick="saveToStorage()">Save</button>
+      <button id="cancel" class="cancle">Cancel</button>
+    </div>
+  </div>
+
+  <div class="view" id="view" style="display: none;">
+    <ul class="result" id="result"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
